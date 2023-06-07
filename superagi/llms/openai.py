@@ -21,6 +21,7 @@ class OpenAi(BaseLlm):
         self.api_key = api_key
         self.image_model = image_model
         openai.api_key = api_key
+        openai.api_base = get_config("OPENAI_API_BASE")
 
     def get_model(self):
         return self.model
